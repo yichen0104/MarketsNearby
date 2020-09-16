@@ -1,0 +1,22 @@
+Instructions on running hw5
+
+1) Import database
+Database are modified into .sql file in root/databases for easier usage. All farmer markets 
+are organized as farmers.sql while all zip records are organized as 
+zip_codes_states.sql.
+The program is expected to access a database at localhost:3306 with 
+username="root", password="lyc0507link". The larger database is named as
+"farmers_market", containing "farmers" and "zip_codes_states" as two
+smaller databases to query from.
+
+A valid query looks like
+    "SELECT * FROM farmers WHERE city LIKE '%s' AND State LIKE '%s' AND zip LIKE '%s' "
+from farmers, or 
+    "SELECT * FROM zip_codes_states WHERE city LIKE '%s' AND state LIKE '%s' AND (check_coordinates)"
+from zip_codes_states
+
+2) Configure packages
+1. Copy hw5.war to tomcat_directory/webapps
+2. Extract to subdirectory "hw5"
+3. Enter hw5 subdirectory. Modify the database infomation of your own in index.jsp
+4. Start the tomcat server. Go to https://localhost:8080/hw5.
